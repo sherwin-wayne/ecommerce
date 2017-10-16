@@ -1,0 +1,62 @@
+<?php
+session_start();
+if($_SESSION["paypalphp"]=="")
+{
+    ?>
+    <script type="text/javascript">
+        window.location="products.php";
+    </script>
+<?php
+
+}
+$link=mysqli_connect("localhost","id3084560_sherwinromualdo","Au5573lvsme");
+mysqli_select_db($link,"id3084560_dbnightclass");
+$order_id=$_GET["id"];
+
+//this is for getting record from temp table to permanent table
+$res=mysqli_query($link,"select * from checkout_address where id = $order_id");
+while($row=mysqli_fetch_array($res))
+{
+    $fname=$row["firstname"];
+    $lname=$row["lastname"];
+    $email=$row["email"];
+    $contactno=$row["contact"];    
+    $address=$row["address"];
+
+}
+//THIS IS THE PART WHERE THE ITEMS DEVIATE FROM THE ORIGINAL 
+mysqli_query($link,"insert into confirm_order_address (firstname, lastname, email, contact, address)
+                    values('','$fname','$lname','$email','$contactno', '$address')");
+
+//now need to get permanent table order id
+
+$res=mysqli_query($link,"select id from confirm_order_address order by id desc limit 1");
+while($row=mysqli_fetch_array($res))
+{
+    $id=$row["id"];
+}
+
+foreach ($_COOKIE['item'] as $name1 => $value)   //this is for looping as per cookies if 3 cookies then loop move
+{
+    $values11 = explode("__", $value);
+
+    mysqli_query($link,"insert into confirm_order_product values('','$id','$values11[1]','$values11[2]','$values11[3]','$values11[0]','$values11[4]')");
+}
+
+
+echo "Your Order Was Placed Successfully, We Will Deliver it To You Soon. Thank you!";
+
+$_SESSION["pay"]="";
+$_SESSION["paypalphp"]="";
+
+
+?>
+
+<script type="text/javascript">
+
+    setTimeout(function(){
+        window.location="products.php";
+
+    },3000);
+
+</script>
