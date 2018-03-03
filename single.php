@@ -1,7 +1,7 @@
 <?php
 $id = $_GET["id"];
-$link = mysqli_connect("localhost", "id3084560_sherwinromualdo", "Au5573lvsme");
-mysqli_select_db($link, "id3084560_dbnightclass");
+$link = mysqli_connect("localhost", "root", "");
+mysqli_select_db($link, "dbnightclass");
 
 if (isset($_POST["submit1"])) {
     $d = 0;
@@ -148,10 +148,12 @@ while ($row = mysqli_fetch_array($res))
                             <h4><?php echo $row["product_name"]; ?></h4>
                             <div class="para-grid">
                                 <span  class="add-to">₱<?php echo $row["product_price"]; ?></span><br><br>
+<!-- THIS IS WHERE THE PROBLEM IS - HOW TO MAKE THE SELECTED NUMBER OF ITEMS BE THE SUBMITTED NUMBER OF ITEMS ONCE THE SHOPPING CART BUTTON IS SUBMITTED -->
                                 <label>Quantity:</label>
                                 <input type="text" value="1"/>
                                 <label>Note: Click as many times as needed - one click is one item, two clicks are two items etc</label>
-                                <button type="submit" name="submit1" class="hvr-shutter-in-vertical cart-to"><i class="fa fa-shopping-cart"></i>CLICK TO ADD TO SHOPPING CART</button>                 
+                                <button type="submit" name="submit1" class="hvr-shutter-in-vertical cart-to"><i class="fa fa-shopping-cart"></i>CLICK TO ADD TO SHOPPING CART</button>  
+
                                 <div class="clearfix"></div>
                              </div>
                             <h5><?php echo $row["product_quantity"]; ?> items in stock</h5>

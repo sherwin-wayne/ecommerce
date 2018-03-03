@@ -53,9 +53,9 @@ if ($uploadOk == 0) {
 
 //THIS IS WHERE connect to db,insert into table, product name etd
 $host = "localhost";
-$username = "id3084560_sherwinromualdo";
-$password = "Au5573lvsme";
-$dbname = "id3084560_dbnightclass";
+$username = "root";
+$password = "";
+$dbname = "dbnightclass";
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
 if(!$conn){

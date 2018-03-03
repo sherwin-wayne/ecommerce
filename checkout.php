@@ -73,8 +73,8 @@
 		    $phone = $_POST['contactnumber'];
 		    $billing = $_POST['billing'];    
 
-		$link = mysqli_connect("localhost", "id3084560_sherwinromualdo","Au5573lvsme");
-		mysqli_select_db($link,"id3084560_dbnightclass");
+		$link = mysqli_connect("localhost", "root", "");
+		mysqli_select_db($link,"dbnightclass");
 		mysqli_query($link,"INSERT INTO checkout_address(firstname, lastname, email, contact, address)
 			                      values('$first', '$last', '$email', '$phone', '$billing')" );
 

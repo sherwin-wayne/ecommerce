@@ -9,8 +9,8 @@ if($_SESSION["paypalphp"]=="")
 <?php
 
 }
-$link=mysqli_connect("localhost","id3084560_sherwinromualdo","Au5573lvsme");
-mysqli_select_db($link,"id3084560_dbnightclass");
+$link=mysqli_connect("localhost", "root", "");
+mysqli_select_db($link,"dbnightclass");
 $order_id=$_GET["id"];
 
 //this is for getting record from temp table to permanent table

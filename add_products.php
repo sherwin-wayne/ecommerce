@@ -37,7 +37,7 @@ include "menu.php";
 				<td> Category: </td> <td> <select name = "product_category" onchange="showMe()" id="product_category">
 				<option value="">-----------</option>
 				<?php
-					 $conn = mysqli_connect("localhost", "id3084560_sherwinromualdo", "Au5573lvsme", "id3084560_dbnightclass");
+					 $conn = mysqli_connect("localhost", "root", "", "dbnightclass");
 				 
 				 if ($conn){
 				 	$sql = "SELECT * FROM categories1_tbl";

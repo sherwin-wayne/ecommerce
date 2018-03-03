@@ -3,10 +3,10 @@ session_start();
 
 //DB CONFIGURATION
 $host = "localhost";
-$username = "id3084560_sherwinromualdo";
-$password = "Au5573lvsme";
-$dbname = "id3084560_dbnightclass";
-  $conn = mysqli_connect($host, $username, $password, $dbname);
+$username = "root";
+$password = "";
+$dbname = "dbnightclass";
+$conn = mysqli_connect($host, $username, $password, $dbname);
 //CHECK CONNECTION
   if(!$conn){
     die("Connection failed: ". mysqli_connect_error());

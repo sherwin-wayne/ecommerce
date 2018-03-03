@@ -59,10 +59,10 @@ $category_id = $_POST['category_id'];
 
 //THIS IS WHERE connect to db,insert into table, product name etd
 $host = "localhost";
-$username = "id3084560_sherwinromualdo";
-$password = "Au5573lvsme";
-$dbname = "id3084560_dbnightclass";
-    $conn = mysqli_connect($host, $username, $password, $dbname);
+$username = "root";
+$password = "";
+$dbname = "dbnightclass";
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
     if(!$conn){
         die("Connection failed: ". mysqli_connect_error());

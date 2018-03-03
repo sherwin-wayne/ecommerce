@@ -1,6 +1,6 @@
 <?php
-$link=mysqli_connect("localhost","id3084560_sherwinromualdo","Au5573lvsme");
-mysqli_select_db($link,"id3084560_dbnightclass");
+$link=mysqli_connect("localhost", "root", "");
+mysqli_select_db($link,"dbnightclass");
 $id=$_GET["id"];
 
 $res=mysqli_query($link,"select * from products1_tbl where product_id=$id");

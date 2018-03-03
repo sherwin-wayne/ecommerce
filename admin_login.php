@@ -1,7 +1,7 @@
 <?php
 session_start();
-$conn=mysqli_connect("localhost","id3084560_sherwinromualdo","Au5573lvsme");
-mysqli_select_db($conn,"id3084560_dbnightclass");
+$conn=mysqli_connect("localhost", "root", "");
+mysqli_select_db($conn,"dbnightclass");
 ?>
 <!DOCTYPE html>
 <html >

@@ -37,17 +37,17 @@ $sql = "SELECT * from products1_tbl
 	 		echo   "<div class='top-content'>";
 	 		echo   "<h5>" . $row['product_name'] . "</h5>";
 	 		echo   "PRICE: ₱" . $row['product_price']."<br>" ;
-	 		echo   "AVAILABLE IN STOCK:" . $row['product_quantity'] ;
+	 		echo   "<br>AVAILABLE IN STOCK:" . $row['product_quantity'] ;
 	 		echo   "<div class='white'>"; 
-	 		echo   "<a href=single.php?id=$row[product_id] class='hvr-shutter-in-vertical hvr-shutter-in-vertical2'>ADD TO CART</a>";
+	 		echo   "<br> <a href=single.php?id=$row[product_id] class='hvr-shutter-in-vertical hvr-shutter-in-vertical2'>ADD TO MY SHOPPING CART</a>";
 	 		echo   "<div class='clearfix'></div>";
 	 		echo   "</div>";
-	 			 		echo   "<hr><hr>"; 	 			 		
+	 			 		echo   "<br>"; 	 			 		
 	 		echo   "</div>";
-	 			 		echo   "<hr><hr>";
+	 			 		echo   "<br>";
 	 		echo   "</div>";
-	 			 		echo   "<hr><hr>";
-	 		echo   "</div>"; 	    
+	 			 		echo   "<br>";
+	 		echo   "</div>";	    
 		}
 }	 	
 
